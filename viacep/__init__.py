@@ -15,7 +15,7 @@ class ViaCEP:
 
 	def getDadosCEP(self, cep):
 		self.cep = cep
-		url_api = ('http://www.viacep.com.br/ws/%s/json' % self.cep)
+		url_api = (f'http://www.viacep.com.br/ws/{self.cep}/json')
 		req = requests.get(url_api)
 		if req.status_code == 200:
 			dados_json = json.loads(req.text)
